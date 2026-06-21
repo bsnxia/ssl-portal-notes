@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>中国竞彩网首页 · 站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fbe9d7 0%, #f7d9c4 45%, #f2ccb5 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.6;
+            color: #3a2c24;
+        }
+        .wrapper {
+            max-width: 1100px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .card {
+            background: #fffcf9;
+            border-radius: 2.4rem;
+            padding: 2.5rem 2.8rem;
+            box-shadow: 0 12px 30px rgba(120, 70, 40, 0.12), 0 4px 10px rgba(0,0,0,0.03);
+            transition: box-shadow 0.2s ease;
+        }
+        .card:hover {
+            box-shadow: 0 18px 40px rgba(120, 70, 40, 0.16);
+        }
+        .hero-card {
+            text-align: center;
+            background: #fffaf5;
+            padding-top: 3.2rem;
+            padding-bottom: 3.2rem;
+        }
+        .hero-icon {
+            font-size: 3.6rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            background: #f2d6c0;
+            width: 72px;
+            height: 72px;
+            line-height: 72px;
+            border-radius: 60% 40% 50% 50%;
+            color: #5e3e2e;
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: #4f362a;
+            margin-top: 0.2rem;
+            margin-bottom: 0.4rem;
+        }
+        .subhead {
+            font-size: 1.1rem;
+            color: #7b5f4e;
+            max-width: 520px;
+            margin: 0.8rem auto 0;
+        }
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #edd9cb;
+            padding-bottom: 0.4rem;
+            display: inline-block;
+            color: #583d2f;
+        }
+        .card h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin: 1.2rem 0 0.4rem;
+            color: #5d4233;
+        }
+        .card p {
+            margin-bottom: 1rem;
+            color: #4f3b30;
+        }
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 0.8rem;
+            margin: 1rem 0;
+        }
+        .tag {
+            background: #f0e0d4;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #4f362a;
+        }
+        .link-btn {
+            display: inline-block;
+            background: #dfc4b0;
+            color: #3f2e24;
+            padding: 0.5rem 1.6rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 450;
+            transition: background 0.2s, transform 0.1s;
+            border: 1px solid rgba(150, 100, 70, 0.1);
+            margin-top: 0.2rem;
+        }
+        .link-btn:hover {
+            background: #d3b49e;
+            transform: scale(1.01);
+        }
+        .link-btn:active {
+            transform: scale(0.98);
+        }
+        .faq-summary {
+            background: #f3e6dc;
+            border-radius: 1.6rem;
+            padding: 1.6rem 2rem;
+            margin-top: 0.5rem;
+        }
+        .faq-summary dt {
+            font-weight: 500;
+            margin-top: 0.6rem;
+            color: #4c3428;
+        }
+        .faq-summary dd {
+            margin-left: 0.2rem;
+            margin-bottom: 0.6rem;
+            color: #5f483b;
+        }
+        .faq-summary dt:first-of-type {
+            margin-top: 0;
+        }
+        .text-link {
+            color: #7f5b45;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            transition: color 0.15s;
+        }
+        .text-link:hover {
+            color: #ba8866;
+        }
+        .footnote {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #7b6456;
+            margin-top: 0.5rem;
+        }
+        @media (max-width: 700px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+            .card {
+                padding: 1.8rem 1.5rem;
+                border-radius: 1.8rem;
+            }
+            .hero-card {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+            .grid-2col {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .subhead {
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-icon {
+                width: 60px;
+                height: 60px;
+                line-height: 60px;
+                font-size: 2.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- 主视觉卡片 -->
+    <div class="card hero-card">
+        <div class="hero-icon">⚡</div>
+        <h1>中国竞彩网首页</h1>
+        <p class="subhead">一个专注赛事信息的站点，提供竞彩资讯与参考数据。本站持续运营，面向对体育竞猜有兴趣的普通用户。</p>
+        <div style="margin-top: 1.6rem;">
+            <a href="https://ssl-portal-jingcai.com" class="link-btn">中国竞彩网首页</a>
+        </div>
+    </div>
+
+    <!-- 用途卡片 + 适合人群 两列 -->
+    <div class="grid-2col">
+        <!-- 用途卡片 -->
+        <div class="card">
+            <h2>站点用途</h2>
+            <p>这里汇集了竞猜玩法介绍、赛事前瞻、数据统计以及相关规则说明。你可以在这里了解不同赛事的背景信息，也可以查阅基础的概率与赔率知识。</p>
+            <p>内容偏向信息整合，帮助用户在参与前对竞彩有更清晰的认知。</p>
+            <div class="tag-list">
+                <span class="tag">赛事资料</span>
+                <span class="tag">玩法科普</span>
+                <span class="tag">数据参考</span>
+                <span class="tag">规则说明</span>
+            </div>
+            <p style="margin-top: 0.6rem;">若想直接浏览完整内容，可前往 <a href="https://ssl-portal-jingcai.com" class="text-link">中国竞彩网首页</a> 了解更多。</p>
+        </div>
+
+        <!-- 适合人群卡片 -->
+        <div class="card">
+            <h2>适合人群</h2>
+            <p>无论你是刚接触竞彩的新手，还是已有一定经验的爱好者，站内信息都设计为易于理解。</p>
+            <h3>🔹 入门用户</h3>
+            <p>可以从基本概念和术语开始，逐步建立自己的判断框架。</p>
+            <h3>🔹 理性参与者</h3>
+            <p>更关注数据与客观信息，希望基于事实做出参考。</p>
+            <p style="margin-top: 0.8rem;">站内不提供投注服务，仅作为信息参考平台。</p>
+        </div>
+    </div>
+
+    <!-- 自然链接段落 + 可信说明 -->
+    <div class="card">
+        <h2>关于本站 & 可信说明</h2>
+        <p><strong>中国竞彩网首页</strong> 是一个独立的竞彩信息站点，与官方机构无直接隶属关系。站内所有内容均来自公开资料整理，力求准确，但不构成任何建议或承诺。</p>
+        <p>运营团队持续对内容进行核对，保持信息更新。用户在使用时应注意甄别，并结合自身情况理性判断。任何竞猜行为都应当遵守当地法律法规。</p>
+        <p>若希望直接访问站点首页，可以通过 <a href="https://ssl-portal-jingcai.com" class="text-link">中国竞彩网首页</a> 这一链接进入。页面结构清晰，适合快速浏览所需版块。</p>
+        <div style="background: #f1e4da; border-radius: 1.2rem; padding: 1rem 1.6rem; margin-top: 1.2rem;">
+            <p style="margin-bottom: 0;">🔍 提示：本站内容仅供信息参考，不保证实时性。请以官方渠道发布的信息为准。</p>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要卡片 -->
+    <div class="card">
+        <h2>常见问题 · 摘要</h2>
+        <dl class="faq-summary">
+            <dt>这个网站提供实时赔率吗？</dt>
+            <dd>站内主要展示基础参考数据，不保证实时赔率更新，建议结合专业数据源使用。</dd>
+            <dt>是否需要注册才能使用？</dt>
+            <dd>大部分内容可直接浏览，无需注册。部分交互功能可能需登录，以页面实际提示为准。</dd>
+            <dt>内容多久更新一次？</dt>
+            <dd>根据赛事周期和素材整理进度更新，没有固定频率，但会尽量保持活跃。</dd>
+            <dt>可以信任站内的数据吗？</dt>
+            <dd>数据经过人工核对，但无法保证万无一失。请理性参考，独立判断。</dd>
+        </dl>
+    </div>
+
+    <!-- 温和的收尾 -->
+    <div class="footnote">
+        <span>信息页面 · 持续完善中</span>
+    </div>
+</div>
+</body>
+</html>
